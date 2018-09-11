@@ -1,0 +1,55 @@
+%% Homework 2.  9/13/18 Taylor series 
+%Write a Matlab script that will calculate the cosine of an angle using the Taylor series expansion derived in part a, 
+%truncating the series after the first 100 terms. The script should allow the user to enter an angle in degrees, and 
+%should also display the final results. Provide verification that your Matlab script works properly.
+
+d = input('Enter angle in degrees:');
+x = d * pi/180;   %converts to radians
+mycos = 0    %initializes
+for i = 1:100  %truncates and only includes 1st 100 terms
+  t = (-1)^i * ((x^(2*i)/factorial(2*i)) %representation of the taylor series for cos(x)
+  mycos = mycos + t;
+  if(abs(t) < 1.0e-8)
+    break
+  end     %cathces error if it doesn't need to do all 100 loops then it will break out of it
+end
+display['The cos is', num2str(mycos)]; %Displays the result of the Taylor Maclaurin series
+
+
+function costaylor(x,i) %x is the angle in degrees and i is the number/order of it
+  x = 
+
+
+
+
+
+d = input('Enter angle in degrees:');
+x = d * pi/180;   %converts to radians
+mycos = 0    %initializes
+for i = 1:100  %truncates and only includes 1st 100 terms
+  t = (-1)^i *((x^(2*i))/factorial(2*i));  %representation of the taylor series
+  mycos = mycos + t;
+  if(abs(t)< 1.0e-8)
+    break
+  end
+end
+display(['The cos is', num2str(mycos)]);
+
+
+
+
+%Calculates the Maclaurin series approximation to cos(x) using the first n terms
+% in the expansion
+
+function apx = costaylor(d ,n)
+  apx = 0; %initializes
+  x = xx * pi/180 %converts degrees to radians
+  for i:n-1
+    apx = apx + (-1)^i *((x^(2*i))/factorial(2*i));
+  end
+end
+
+
+
+%% this is the anonymous function for the cos function
+costaylor = @(x,i) (-1)^i * ((x^(2*i))/factorial(2*i));
