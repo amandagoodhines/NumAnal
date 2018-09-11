@@ -1,0 +1,68 @@
+%% HW1 Code. 9/6/18  Binary
+
+%Prompts user to type in binary significand and saves it as a string
+a = input('Enter the binary significand (1.bbbb):','s');
+sum = 0; %initializes variable of the sum
+n = length(a); %saves the number of variables in variable n
+for i = 1:n
+    d = str2num(a(i));
+    sum = sum + (d * (2^-i));
+end
+disp(['The decimal number is:',num2str(sum)]);
+
+% Prompts user to type in the binary exponent and saves it as a
+b = input('Enter the binary exponent (2^kkkk):','s');
+%changes the binary exponent value to a decimal number
+b2 = bin2dec(b); 
+%prints the decimal number of the exponent
+disp(['The exponent value is:',num2str(b2)]);
+
+% Puts together the significand and exponent to get the final value
+finalval = (sum + 1) * (2^b2);
+%Prints the final statement and answer
+fprintf(['The binary number %s * 2^ %s is equal to %s in decimal notation\n'], num2str(sum), num2str(b2), num2str(finalval));
+
+%% Verifying 2a)
+% saves the binary significand for 2a as a string
+a = '1011101';
+sum = 0; %initializes variable of the sum
+n = length(a); %saves the number of variables in variable n
+for i = 1:n
+    d = str2num(a(i));
+    sum = sum + (d * (2^-i));
+end
+disp(['The decimal number is:',num2str(sum)]);
+
+% saves the binary exponent for 2a as a string
+b = '1101';
+%changes the binary exponent value to a decimal number
+b2 = bin2dec(b); 
+%prints the decimal number of the exponent
+disp(['The exponent value is:',num2str(b2)]);
+
+% Puts together the significand and exponent to get the final value
+finalval = (sum + 1) * (2^b2);
+%Prints the final statement and answer
+fprintf(['The binary number %s * 2^ %s is equal to %s in decimal notation\n'], num2str(sum), num2str(b2), num2str(finalval));
+%% Verifying 2b)
+% saves the binary significand for 2b as a string
+a = '001001';
+sum = 0; %initializes variable of the sum
+n = length(a); %saves the number of variables in variable n
+for i = 1:n
+    d = str2num(a(i));
+    sum = sum + (d * (2^-i));
+end
+disp(['The decimal number is:',num2str(sum)]);
+
+% saves the binary exponent for 2b as a string
+b = '1001';
+%changes the binary exponent value to a decimal number
+b2 = bin2dec(b); 
+%prints the decimal number of the exponent
+disp(['The exponent value is:',num2str(b2)]);
+
+% Puts together the significand and exponent to get the final value
+finalval = (sum + 1) * (2^b2);
+%Prints the final statement and answer
+fprintf(['The binary number %s * 2^ %s is equal to %s in decimal notation\n'], num2str(sum), num2str(b2), num2str(finalval));
