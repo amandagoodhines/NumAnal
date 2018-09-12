@@ -1,4 +1,6 @@
 %% Homework 2.  9/13/18 Taylor series 
+
+%%Part C)
 %Write a Matlab script that will calculate the cosine of an angle using the Taylor series expansion derived in part a, 
 %truncating the series after the first 100 terms. The script should allow the user to enter an angle in degrees, and 
 %should also display the final results. Provide verification that your Matlab script works properly.
@@ -18,6 +20,17 @@ display['The cos is', num2str(mycos)]; %Displays the result of the Taylor Maclau
 
 function costaylor(x,i) %x is the angle in degrees and i is the number/order of it
   x = 
+
+%% Part E)
+iter = zeros(1,20);
+term = zeros(1,20);
+for i = 1:20
+  iter(i) = i;
+  t=(-1)^i * ((x^(2*i)/factorial(2*i))
+  term(i) = t;
+ end
+ plot(inter,term);
+
 
 
 
@@ -41,9 +54,9 @@ display(['The cos is', num2str(mycos)]);
 %Calculates the Maclaurin series approximation to cos(x) using the first n terms
 % in the expansion
 
-function apx = costaylor(d ,n)
+function apx = costaylor(x ,i)
   apx = 0; %initializes
-  x = xx * pi/180 %converts degrees to radians
+  %x = d * pi/180 %converts degrees to radians
   for i:n-1
     apx = apx + (-1)^i *((x^(2*i))/factorial(2*i));
   end
@@ -53,3 +66,6 @@ end
 
 %% this is the anonymous function for the cos function
 costaylor = @(x,i) (-1)^i * ((x^(2*i))/factorial(2*i));
+
+
+%
